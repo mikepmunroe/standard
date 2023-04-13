@@ -1,5 +1,12 @@
 # Changelog
 
+* Enable `DisabledByDefault: true`. This shouldn't impact anyone, but might
+  change the behavior of some `extend_config` users. Because Standard specifies
+  every rule in rubocop and rubocop-performance, this configuration's absence
+  wasn't felt until we went to the plugin system, where it makes much more sense
+  for plugins to _opt-in_ to the cops they want to configure, as opposed to just
+  running every single one that they happen to load/require
+
 ## 1.26.0
 
 * Introduce `--fix-unsafely` and `rake standard:fix_unsafely` for running
